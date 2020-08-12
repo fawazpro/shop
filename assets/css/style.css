@@ -1,0 +1,183 @@
+a {
+  color: initial;
+  text-decoration: none;
+}
+a:hover {
+  color: initial;
+  text-decoration: none;
+  text-shadow: 3rem;
+}
+.banner{
+  height: 2vh;
+  /* mask-repeat: repeat; */
+}
+
+.banner img{
+  width: 100vw;
+  max-height: 50vh;
+}
+
+.slides ul {
+  margin-left: 5px;
+  padding-left: 0px;
+  overflow-x: scroll;
+  scrollbar-width: 0.5px;
+  scroll-snap-type: proximity;
+  display: flex;
+  list-style: none;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+}
+
+.slides ul li {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.slides ul li img {
+  max-height: 130px;
+  border-radius: 10px;
+  margin: 8px 10px;
+  margin-left: 0px;
+}
+
+
+.categories {
+  /* background-color: #fff; */
+  margin: 4px 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3px;
+  row-gap: 2px;
+}
+
+.category {
+  margin: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category img {
+  width: 30px;
+}
+
+.category p {
+  font-size: 0.8rem;
+}
+.ticket{
+  position: fixed;
+  top: 55vh;
+  left: 1;
+  z-index: 1001;
+  display: none;
+}
+
+/* Utilities */
+.hide{
+  display: none;
+}
+.rbl{
+  border-bottom-left-radius: 15px !important;
+}
+.rbr{
+  border-bottom-right-radius: 15px !important; 
+}
+.rtl{
+  border-top-left-radius: 15px !important;
+}
+.rtr{
+  border-top-right-radius: 15px !important;
+}
+.r{
+  border-radius: 15px;
+}
+.font-smaller{
+  font-size: calc(0.5em * 5vw);
+}
+.font-small{
+  font-size: calc(1.4rem * 20vw);
+}
+/* Utilities */
+
+
+@media (min-width:375px){
+  .slides{
+    max-height: 400px;
+  }
+  .slides ul li img {
+  max-height: 200px;
+  }
+    .categories {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .category img {
+    width: 55px;
+  }
+}
+
+@media (min-width:425px){
+     .category img {
+    width: 75px;
+  }
+}
+
+@media (min-width:768px){
+      .category img {
+    width: 80px;
+  }
+}
+
+.c-card__body {
+    font-family: poppins, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    z-index: 1;
+    font-size: 1.375em;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: .015em;
+    color: #fff;
+}
+.c-card__title {
+    position: relative;
+    z-index: 1
+}
+.c-card--blog:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 15px;
+    background: linear-gradient(135deg,rgba(72,72,72,.35),rgba(72,72,72,0));
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+.desc{
+  position: absolute;
+  background: linear-gradient(135deg,rgba(253, 253, 253, 0.925),rgba(250, 250, 250, 0.884));
+  max-height: calc(2 * 37%);
+  overflow-y: scroll;
+  scrollbar-width: 0.5px;
+  scroll-snap-type: proximity;
+  opacity: 0;
+  cursor: help;
+}
+.desc:hover{
+  opacity: 1;
+}
+.nav-bottom{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.account{
+  /* margin-top: 20vh; */
+  display: flex;
+  justify-content: center;
+}
