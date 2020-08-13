@@ -31,6 +31,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+$routes->get('/admin', 'Admin::index');
+$routes->get('/dashboard', 'Admin::dash');
+$routes->post('/dashboard', 'Admin::tabledit');
 
 /**
  * --------------------------------------------------------------------

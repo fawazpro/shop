@@ -14,7 +14,7 @@ class Products extends Model
     protected $returnType     = 'object'; // Or 'object'
     protected $useSoftDeletes = false;
 
-    // protected $allowedFields = ['transactionType', 'phone', 'transactionRef', 'statusMessage', 'dateOfTransaction'];
+    protected $allowedFields = ['product_name', 'product_code', 'product_price', 'product_image', 'product_description'];
 
     protected $useTimestamps = false; // This boolean value determines whether the current date is automatically added to all inserts and updates.
 

@@ -13,15 +13,12 @@
     <header>
         <nav class="container navbar navbar-expand navbar-light bg-white">
             <a class="navbar-brand mr-auto mt-2 mt-lg-0 text-truncate" href="#">
-                <img src="<?= base_url('assets/img/stores/Rayyan souq logo.jpg') ?>" width="30" alt="" />
-                Rayyan Souq
+                <img src="<?= $logo ?>" width="30" alt="" />
+                <?= $brand ?>
             </a>
             <!-- Search Form -->
             <form class="form-inline ml-auto mt-2 mt-lg-0">
                 <div class="input-group mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text bg-white">🔎</div>
-                    </div>
                     <input type="search" class="form-control" placeholder="Search Products and Categories">
                 </div>
             </form>
@@ -34,13 +31,10 @@
                     <a class="nav-link p-0" href="<?= base_url('/') ?>" title="Home">🏠</a>
                 </li>
                 <li class="nav-item">
-                    <button class="p-0 btn btn-light btn-outline-danger bg-transparent nav-link" title="Cart" data-toggle="modal" data-target="#cart">🛒<span class="total-count badge badge-pill badge-danger"></span></button>
+                    <button class="p-0 btn btn-light btn-outline-danger bg-transparent nav-link display-3" title="Cart" data-toggle="modal" data-target="#cart">🛒<span class="total-count badge badge-pill badge-danger"></span></button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link p-0" href="<?= base_url('account') ?>" title="My account">👥</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link p-0" href="https://wa.me/2347061811568" title="Need Help?">🆘</a>
+                    <a class="nav-link p-0" href="https://wa.me/<?= $phone ?>" title="Need Help?">🆘</a>
                 </li>
             </ul>
         </div>
@@ -58,7 +52,7 @@
                     <div class="modal-body px-1">
                         <!-- <table class="show-cart table"></table> -->
                         <div class="showCart"></div>
-                        <div class="float-right pr-3">Total price: $<span class="total-cart"></span></div>
+                        <div class="float-right pr-3">Total price: &#x20a6; <span class="total-cart"></span></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -79,4 +73,7 @@
 
         <!-- Single Banner -->
         <div class="container-lg mt-6 bg-light">
-            <h1 class="text-white display-2 text-center"><?= $heading ?></h1>
+            <h1 class="text-white display-2 text-center"><?= $heading_full ?>
+            <br>
+            <a href="tel:<?= $phone ?>" class="btn btn-dark badge-pill h1 px-4 py-2 text-center">📞 <?= $phone ?></a></h1>
+            
