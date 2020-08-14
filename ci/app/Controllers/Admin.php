@@ -18,6 +18,62 @@ class Admin extends BaseController
         echo view('admin/sign/footer', $footer_data);
     }
 
+    public function product()
+    {
+        $product = new \App\Models\Products();
+        $products = $product->findAll();
+        $store = new \App\Models\Store();
+        $stores = $store->findAll()[0];
+
+        $header_data = [
+            'title' => 'Welcome on board'
+        ];
+
+        $data = [
+            'name' => $stores->store_name,
+            'products' => $products,
+        ];
+
+        $footer_data = [
+            'message' => 'Welcome on board'
+        ];
+        echo view('admin/header', $header_data);
+        echo view('admin/products', $data);
+        echo view('admin/footer', $footer_data);
+    }
+
+    public function order()
+    {
+        $store = new \App\Models\Store();
+        $stores = $store->findAll()[0];
+        $header_data = [
+            'title' => 'Welcome on board'
+        ];
+        $data = [
+            'name' => $stores->store_name,
+        ];
+        $footer_data = [
+            'message' => 'Welcome on board'
+        ];
+        echo view('admin/header', $header_data);
+        echo view('admin/orders', $data);
+        echo view('admin/footer', $footer_data);
+    }
+
+    public function pref()
+    {
+        $header_data = [
+            'title' => 'Welcome on board'
+        ];
+
+        $footer_data = [
+            'message' => 'Welcome on board'
+        ];
+        echo view('admin/header', $header_data);
+        echo view('admin/pref');
+        echo view('admin/footer', $footer_data);
+    }
+
     public function dash()
     {
         $product = new \App\Models\Products();

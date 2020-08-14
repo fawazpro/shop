@@ -8,22 +8,22 @@
     <title>SGM Mall Vendor Dashboard</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url('assets/media/image/favicon.png')?>" />
+    <link rel="shortcut icon" href="<?= base_url('assets/media/image/favicon.png') ?>" />
 
     <!-- Main css -->
-    <link rel="stylesheet" href="<?= base_url('vendors/bundle.css')?>" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('vendors/bundle.css') ?>" type="text/css" />
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
     <!-- Daterangepicker -->
-    <link rel="stylesheet" href="<?= base_url('vendors/form-wizard/jquery.steps.css')?>" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('vendors/form-wizard/jquery.steps.css') ?>" type="text/css" />
 
     <!-- DataTable -->
-    <link rel="stylesheet" href="<?= base_url('vendors/dataTable/datatables.min.css')?>" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('vendors/dataTable/datatables.min.css') ?>" type="text/css" />
 
     <!-- App css -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/app.min.css')?>" type="text/css" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/app.min.css') ?>" type="text/css" />
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -33,10 +33,10 @@
 
 <body>
     <!-- Preloader -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="preloader-icon"></div>
         <span>Loading...</span>
-    </div>
+    </div> -->
     <!-- ./ Preloader -->
 
     <!-- Sidebar group -->
@@ -237,7 +237,7 @@
                 <div class="navigation-menu-body">
                     <ul>
                         <li>
-                            <a class="active" href="index.html">
+                            <a class="" href="<?= base_url('/dashboard')?>">
                                 <span class="nav-link-icon">
                                     <i data-feather="pie-chart"></i>
                                 </span>
@@ -245,11 +245,27 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="disabled">
+                            <a class="" href="<?= base_url('admin/products')?>">
                                 <span class="nav-link-icon">
-                                    <i data-feather="mouse-pointer"></i>
+                                    <i></i>
                                 </span>
                                 <span>Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="" href="<?= base_url('admin/orders')?>">
+                                <span class="nav-link-icon">
+                                    <i></i>
+                                </span>
+                                <span>Orders</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pref')?>" class="">
+                                <span class="nav-link-icon">
+                                    <i></i>
+                                </span>
+                                <span>Store Preferences</span>
                             </a>
                         </li>
                     </ul>
