@@ -35,6 +35,7 @@ $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/products', 'Admin::product');
 $routes->get('/admin/orders', 'Admin::order');
 $routes->get('/admin/pref', 'Admin::pref');
+$routes->post('/admin/newproduct', 'Admin::newproduct');
 $routes->get('/dashboard', 'Admin::dash');
 $routes->post('/dashboard', 'Admin::tabledit');
 

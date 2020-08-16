@@ -42,6 +42,38 @@ class Admin extends BaseController
         echo view('admin/footer', $footer_data);
     }
 
+    public function newproduct()
+    {
+        $data = $this->request->getVar();
+        $upload = $this->request->getFile('product_image');
+        $uploaded = $upload->store('assets/prods/', $upload->getName());
+        // $uploaded = TRUE;
+        if ($uploaded) {
+            // $data->array_push(['product_image' => $upload->getName()]);
+            var_dump($data);
+        }
+        // $product = new \App\Models\Products();
+        // $products = $product->findAll();
+        // $store = new \App\Models\Store();
+        // $stores = $store->findAll()[0];
+
+        // $header_data = [
+        //     'title' => 'Welcome on board'
+        // ];
+
+        // $data = [
+        //     'name' => $stores->store_name,
+        //     'products' => $products,
+        // ];
+
+        // $footer_data = [
+        //     'message' => 'Welcome on board'
+        // ];
+        // echo view('admin/header', $header_data);
+        // echo view('admin/products', $data);
+        // echo view('admin/footer', $footer_data);
+    }
+
     public function order()
     {
         $store = new \App\Models\Store();

@@ -10,7 +10,7 @@
                 </p>
             </div>
         </div>
-        
+
         <div class="card">
             <div class="card-body">
                 <h6 class="card-title float-left">My Products</h6>
@@ -73,7 +73,48 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="container">
+                        <form action="<?= base_url('admin/newproduct') ?>" method="POST">
+                            <input type="hidden" name="product_type" value="null">
+                            <div class="form-group">
+                                <label for="">Product Code</label>
+                                <input type="text" class="form-control" name="product_code" placeholder="e.g CHG025">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Product Name</label>
+                                <input type="text" class="form-control" name="product_name" placeholder="e.g XYZ Dual Port Charger">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Product Price</label>
+                                <input type="number" class="form-control" name="product_price" placeholder="e.g 5000">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Product Image</label>
+                                <input type="file" class="form-control-file" name="product_image">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Product Color</label>
+                                <select class="form-control" name="product_color">
+                                    <option value="">Select a Color</option>
+                                    <option value="success">Green</option>
+                                    <option value="danger">Red</option>
+                                    <option value="warning">Yellow</option>
+                                    <option value="primary">Blue</option>
+                                    <option value="info">Grey</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="product_size" value="null">
+                            <div class="form-group">
+                                <label for="">Product Description</label>
+                                <textarea class="form-control" name="product_description" rows="3"></textarea>
+                            </div>
+                            <input type="hidden" name="product_tag" value="null">
+                            <input type="hidden" name="product_discount" value="0">
+                            <input type="hidden" name="product_promo" value="0">
+                            <input type="hidden" name="product_sales" value="100">
+                            <input type="submit" value="Add Product" class="btn btn-success">
+                        </form>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
