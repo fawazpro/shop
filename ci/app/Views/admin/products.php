@@ -26,7 +26,7 @@
                                 <th>Price</th>
                                 <th>Image</th>
                                 <th>Description</th>
-                                <th class="text-right">Action</th>
+                                <th class="text-right">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,17 +39,9 @@
                                     <td><?= $prods->product_image ?></td>
                                     <td><?= $prods->product_description ?></td>
                                     <td class="text-right">
-                                        <div class="dropdown">
-                                            <a href="#" data-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ti-more-alt"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="#" class="dropdown-item">View Detail</a>
-                                                <a href="#" class="dropdown-item">Send</a>
-                                                <a href="#" class="dropdown-item">Edit</a>
-                                                <a href="#" class="dropdown-item text-danger">Delete</a>
-                                            </div>
-                                        </div>
+                                        <button onclick="deleteproduct(<?= $prods->product_id ?>)" class="btn btn-danger">
+                                            <i class="ti-trash"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -74,7 +66,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form action="<?= base_url('admin/newproduct') ?>" method="POST">
+                        <form action="<?= base_url('admin/newproduct') ?>" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="product_type" value="null">
                             <div class="form-group">
                                 <label for="">Product Code</label>

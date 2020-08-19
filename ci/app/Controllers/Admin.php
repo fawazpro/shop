@@ -44,45 +44,40 @@ class Admin extends BaseController
 
     public function newproduct()
     {
+        $product = new \App\Models\Products();
         $data = $this->request->getVar();
         $upload = $this->request->getFile('product_image');
-        $uploaded = $upload->store('assets/prods/', $upload->getName());
-        // $uploaded = TRUE;
+        $img_name = $upload->getName();
+        $uploaded = $upload->store('assets/prods/', $img_name);
         if ($uploaded) {
-            // $data->array_push(['product_image' => $upload->getName()]);
-            var_dump($data);
+            // var_dump($data);
+            $id = $product->insert($data);
+            $product->update($id, ['product_image' => base_url('ci/writable/uploads/assets/prods/'). '/' . $img_name]);
+            $this->product();
         }
-        // $product = new \App\Models\Products();
-        // $products = $product->findAll();
-        // $store = new \App\Models\Store();
-        // $stores = $store->findAll()[0];
+    }
 
-        // $header_data = [
-        //     'title' => 'Welcome on board'
-        // ];
-
-        // $data = [
-        //     'name' => $stores->store_name,
-        //     'products' => $products,
-        // ];
-
-        // $footer_data = [
-        //     'message' => 'Welcome on board'
-        // ];
-        // echo view('admin/header', $header_data);
-        // echo view('admin/products', $data);
-        // echo view('admin/footer', $footer_data);
+    public function delproduct()
+    {
+        $product = new \App\Models\Products();
+        $data = $this->request->getVar();
+        $prod_id = $data['pid'];
+        $result = $product->delete($prod_id);
+        $this->product();
     }
 
     public function order()
     {
         $store = new \App\Models\Store();
         $stores = $store->findAll()[0];
+        $order = new \App\Models\Order();
+        $orders = $order->findAll();
         $header_data = [
             'title' => 'Welcome on board'
         ];
         $data = [
             'name' => $stores->store_name,
+            'orders' => $orders
         ];
         $footer_data = [
             'message' => 'Welcome on board'
@@ -155,57 +150,57 @@ class Admin extends BaseController
             } else if (isset($input['Price'])) {
                 $Price = $input['Price'];
                 $this->data = [
-                    
+
                     'product_price' => $Price,
                 ];
             } else if (isset($input['Image'])) {
                 $Image = $input['Image'];
                 $this->data = [
-                    
+
                     'product_image' => $Image,
                 ];
             } else if (isset($input['Description'])) {
                 $Description = $input['Description'];
                 $this->data = [
-                    
+
                     'product_description' => $Description,
                 ];
-            } 
+            }
             $products = $productModel->update($id, $this->data);
-            if($products){
+            if ($products) {
                 return true;
-            }else {
+            } else {
                 return false;
             }
-            
+
             // $mysqli->query("UPDATE users SET username='" . $input['username'] . "', email='" . $input['email'] . "', avatar='" . $input['avatar'] . "' WHERE id='" . $input['id'] . "'");
         }
-        
-            // } else if ($input['action'] === 'delete') {
+
+        // } else if ($input['action'] === 'delete') {
         //     $mysqli->query("UPDATE users SET deleted=1 WHERE id='" . $input['id'] . "'");
         // } else if ($input['action'] === 'restore') {
         //     $mysqli->query("UPDATE users SET deleted=0 WHERE id='" . $input['id'] . "'");
         // };
 
-    //     $product = new \App\Models\Products();
-    //     $products = $product->findAll();
-    //     $store = new \App\Models\Store();
-    //     $stores = $store->findAll()[0];
+        //     $product = new \App\Models\Products();
+        //     $products = $product->findAll();
+        //     $store = new \App\Models\Store();
+        //     $stores = $store->findAll()[0];
 
-    //     $header_data = [
-    //         'title' => 'Welcome on board'
-    //     ];
+        //     $header_data = [
+        //         'title' => 'Welcome on board'
+        //     ];
 
-    //     $data = [
-    //         'name' => $stores->store_name,
-    //     ];
+        //     $data = [
+        //         'name' => $stores->store_name,
+        //     ];
 
-    //     $footer_data = [
-    //         'message' => 'Welcome on board'
-    //     ];
-    //     echo view('admin/header', $header_data);
-    //     echo view('admin/home', $data);
-    //     echo view('admin/footer', $footer_data);
+        //     $footer_data = [
+        //         'message' => 'Welcome on board'
+        //     ];
+        //     echo view('admin/header', $header_data);
+        //     echo view('admin/home', $data);
+        //     echo view('admin/footer', $footer_data);
     }
 
     //--------------------------------------------------------------------

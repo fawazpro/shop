@@ -13,43 +13,35 @@
 
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title float-left">Recent Orders</h6>
+                <h6 class="card-title float-left">Orders</h6>
                 <div class="clearfix"></div>
                 <div class="table-responsive">
-                    <table id="recent-orders" class="table">
+                    <table id="orders" class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>SKU</th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Image</th>
-                                <th>Description</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Orders</th>
                                 <th class="text-right">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($orders as $order) : ?>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?= $order->order_id ?></td>
+                                    <td><?= $order->customer_name ?></td>
+                                    <td><?= $order->customer_phone ?></td>
+                                    <td><?= $order->customer_email ?></td>
+                                    <td><?= $order->orders ?></td>
                                     <td class="text-right">
-                                        <div class="dropdown">
-                                            <a href="#" data-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ti-more-alt"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="#" class="dropdown-item">View Detail</a>
-                                                <a href="#" class="dropdown-item">Send</a>
-                                                <a href="#" class="dropdown-item">Edit</a>
-                                                <a href="#" class="dropdown-item text-danger">Delete</a>
-                                            </div>
-                                        </div>
+                                        <button onclick="orderfulfill(<?= $order->order_id ?>)" class="btn btn-success">
+                                            <i class="ti-thumb-up"></i>
+                                        </button>
                                     </td>
                                 </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

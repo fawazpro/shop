@@ -39,6 +39,14 @@ $(function () {
             "orderable": false
         }]
     });
+    $('#orders').DataTable({
+        paging: false,
+        lengthMenu: [2, 3, 4],
+        "columnDefs": [{
+            "targets": 2,
+            "orderable": false
+        }]
+    });
     $("#recent-orders").Tabledit({
       url: "",
       editButton: false,
@@ -75,6 +83,14 @@ $(function () {
         console.log(serialize);
       },
     });
+
+    // $(".deleteproduct").click({
+    //     del = $(".deleteproduct").data('id');
+    // });
+
+    function deleteproduct(id) { 
+        console.log(id);
+    }
 
     var start = moment().subtract(29, 'days');
     var end = moment();

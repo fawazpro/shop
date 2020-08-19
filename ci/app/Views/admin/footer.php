@@ -42,6 +42,25 @@
 <!-- Dashboard scripts -->
 <script src="<?= base_url('assets/js/dashboard.js') ?>"></script>
 
+<script>
+    function deleteproduct(id) {
+        console.log(id);
+        var request = $.ajax({
+            url: "deleteproduct",
+            method: "POST",
+            data: {
+                pid: id
+            },
+        }).done(function() {
+            console.log('success');
+            window.location.href = '';
+        });
+        request.fail(function() {
+            console.log('failed');
+        });
+    }
+</script>
+
 <!-- App scripts -->
 <script src="<?= base_url('assets/js/app.min.js') ?>"></script>
 
