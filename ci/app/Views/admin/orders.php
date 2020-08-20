@@ -34,7 +34,14 @@
                                     <td><?= $order->customer_name ?></td>
                                     <td><?= $order->customer_phone ?></td>
                                     <td><?= $order->customer_email ?></td>
-                                    <td><?= $order->orders ?></td>
+                                    <?php
+                                    $orderr = array(json_decode($order->orders));
+                                    $output = '';
+                                    foreach ($orderr[0] as $key => $ordered) {
+                                        $output = $output . $ordered->name . ', ';
+                                    };
+                                    echo ('<td>' . $output . '</td>');
+                                    ?>
                                     <td class="text-right">
                                         <button onclick="orderfulfill(<?= $order->order_id ?>)" class="btn btn-success">
                                             <i class="ti-thumb-up"></i>
