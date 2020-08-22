@@ -89,16 +89,65 @@ class Admin extends BaseController
 
     public function pref()
     {
-        $header_data = [
-            'title' => 'Welcome on board'
-        ];
+        $store = new \App\Models\Store();
+        $stores = $store->findAll()[0];
 
+        $header_data = [
+            'store' => $stores,
+            'title' => 'Welcome on board'
+
+        ];
+        $data = [
+            'name' => $stores->store_name,
+            'store' => $stores,
+        ];
         $footer_data = [
             'message' => 'Welcome on board'
         ];
         echo view('admin/header', $header_data);
-        echo view('admin/pref');
+        echo view('admin/pref', $data);
         echo view('admin/footer', $footer_data);
+    }
+
+    public function prefBasicInfo()
+    {
+        $store = new \App\Models\Store();
+        // $stores = $store->findAll()[0];
+
+        $data = $this->request->getPost();
+        $result = $store->update(1, $data);
+        $this->pref();
+    }
+
+    public function prefBankInfo()
+    {
+        $store = new \App\Models\Store();
+        // $stores = $store->findAll()[0];
+
+        $data = $this->request->getPost();
+        $result = $store->update(1, $data);
+        $this->pref();
+    }
+
+    public function prefMbanner()
+    {
+        $store = new \App\Models\Store();
+
+        $data = $this->request->getPost();
+        // var_dump($data['store_banner_desc']);
+        $upload = $this->request->getFile('store_banner');
+        if($upload){
+            $img_name = $upload->getName();
+            $uploaded = $upload->store('assets/prods/', $img_name);
+            if ($uploaded) {
+                $store->update(1, ['store_banner_desc' => $data['store_banner_desc'], 'store_banner' => base_url('ci/writable/uploads/assets/banner/') . '/' . $img_name,]);
+                $this->pref();
+            }
+        } else {
+            $store->update(1, ['store_banner_desc' => $data['store_banner_desc']]);
+            $this->pref();
+        }
+        
     }
 
     public function dash()

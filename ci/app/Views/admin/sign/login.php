@@ -2,7 +2,7 @@
 
     <!-- logo -->
     <div id="logo">
-        <img src="<?= base_url('assets/media/image/dark-logo.png') ?>" alt="image">
+        <img src="<?= base_url('assets/media/image/dark-logo.png') ?>" alt="image" width="100px">
     </div>
     <!-- ./ logo -->
 

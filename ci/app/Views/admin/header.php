@@ -111,7 +111,7 @@
 
                     <div class="header-logo">
                         <a href="index.html">
-                            <img class="logo" src="assets/media/image/logo.png" alt="logo" />
+                            <img class="logo" src="assets/media/image/logo.png" alt="logo" width="100px" />
                         </a>
                     </div>
                 </div>
@@ -173,24 +173,20 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" title="User menu" data-toggle="dropdown">
                                     <figure class="avatar avatar-sm">
-                                        <img src="assets/media/image/user/man_avatar3.jpg" class="rounded-circle" alt="avatar" />
+
                                     </figure>
-                                    <span class="ml-2 d-sm-inline d-none">Bony Gidden</span>
+                                    <span class="ml-2 d-sm-inline d-none"><?= $store->store_fullname ?></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
                                     <div class="text-center py-4">
                                         <figure class="avatar avatar-lg mb-3 border-0">
-                                            <img src="assets/media/image/user/man_avatar3.jpg" class="rounded-circle" alt="image" />
+
                                         </figure>
-                                        <h5 class="text-center">Bony Gidden</h5>
+                                        <h5 class="text-center"><?= $store->store_fullname ?></h5>
                                         <div class="mb-3 small text-center text-muted">
-                                            @bonygidden
+                                            @<?= $store->store_name ?>
                                         </div>
                                         <a href="#" class="btn btn-outline-light btn-rounded">Manage Your Account</a>
-                                    </div>
-                                    <div class="list-group">
-                                        <a href="profile.html" class="list-group-item">View Profile</a>
-                                        <a href="http://bifor.laborasyon.com/login" class="list-group-item text-danger" data-sidebar-target="#settings">Sign Out!</a>
                                     </div>
                                     <div class="p-4">
                                         <div class="mb-4">
@@ -237,7 +233,7 @@
                 <div class="navigation-menu-body">
                     <ul>
                         <li>
-                            <a class="" href="<?= base_url('/dashboard')?>">
+                            <a class="" href="<?= base_url('/dashboard') ?>">
                                 <span class="nav-link-icon">
                                     <i data-feather="pie-chart"></i>
                                 </span>
@@ -245,7 +241,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="" href="<?= base_url('admin/products')?>">
+                            <a class="" href="<?= base_url('admin/products') ?>">
                                 <span class="nav-link-icon">
                                     <i></i>
                                 </span>
@@ -253,7 +249,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="" href="<?= base_url('admin/orders')?>">
+                            <a class="" href="<?= base_url('admin/orders') ?>">
                                 <span class="nav-link-icon">
                                     <i></i>
                                 </span>
@@ -261,7 +257,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/pref')?>" class="">
+                            <a href="<?= base_url('admin/pref') ?>" class="">
                                 <span class="nav-link-icon">
                                     <i></i>
                                 </span>
