@@ -134,17 +134,36 @@ class Admin extends BaseController
         $store = new \App\Models\Store();
 
         $data = $this->request->getPost();
-        // var_dump($data['store_banner_desc']);
         $upload = $this->request->getFile('store_banner');
-        if($upload){
+        if ($upload->getName() != '') {
             $img_name = $upload->getName();
-            $uploaded = $upload->store('assets/prods/', $img_name);
+            $uploaded = $upload->store('assets/banner/', $img_name);
             if ($uploaded) {
                 $store->update(1, ['store_banner_desc' => $data['store_banner_desc'], 'store_banner' => base_url('ci/writable/uploads/assets/banner/') . '/' . $img_name,]);
                 $this->pref();
             }
         } else {
             $store->update(1, ['store_banner_desc' => $data['store_banner_desc']]);
+            $this->pref();
+        }
+        
+    }
+
+    public function prefDbanner()
+    {
+        $store = new \App\Models\Store();
+
+        $data = $this->request->getPost();
+        $upload = $this->request->getFile('store_desktop_banner');
+        if ($upload->getName() != '') {
+            $img_name = $upload->getName();
+            $uploaded = $upload->store('assets/banner/', $img_name);
+            if ($uploaded) {
+                $store->update(1, ['store_desktop_banner_desc' => $data['store_desktop_banner_desc'], 'store_desktop_banner' => base_url('ci/writable/uploads/assets/banner/') . '/' . $img_name,]);
+                $this->pref();
+            }
+        } else {
+            $store->update(1, ['store_desktop_banner_desc' => $data['store_desktop_banner_desc']]);
             $this->pref();
         }
         
