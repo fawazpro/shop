@@ -58,6 +58,33 @@
         </div>
         <div class="card">
             <div class="card-body">
+                <h6 class="card-title float-left">Admin Login Details</h6>
+                <div class="clearfix"></div>
+                <div class="container">
+                    <form action="<?= base_url('admin/pref/logininfo') ?>" method="POST">
+                        <div class="form-group row">
+                            <label for="Username" class="col-sm-1-12 col-form-label">Username:</label>
+                            <div class="col-sm-1-12 col-8">
+                                <input type="text" class="form-control" name="username" id="username" value="<?= $user['email'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Password" class="col-sm-1-12 col-form-label">Password:</label>
+                            <div class="col-sm-1-12 col-8">
+                                <input type="password" class="form-control" name="password" id="password" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-sm-2 col-sm-10  col-8">
+                                <button type="submit" class="col btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
                 <h6 class="card-title float-left">Banner Update</h6>
                 <div class="clearfix"></div>
                 <div class="container">

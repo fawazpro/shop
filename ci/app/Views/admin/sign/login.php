@@ -10,12 +10,12 @@
     <h5>Sign in</h5>
 
     <!-- form -->
-    <form>
+    <form method="POST" action="postlogin">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username or email" name="username" required autofocus>
+            <input type="text" class="form-control" placeholder="Email" name="email" required autofocus>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="passsword" required>
+            <input type="password" class="form-control" placeholder="Password" name="pass" required>
         </div>
         <div class="form-group d-flex justify-content-between">
         </div>

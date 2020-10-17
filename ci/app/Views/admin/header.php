@@ -171,9 +171,15 @@
                             </li>
 
                             <li class="nav-item dropdown">
+                                <a href="<?=base_url('logout')?>" class="nav-link" title="Logout">
+                                    <i data-feather="logout"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" title="User menu" data-toggle="dropdown">
                                     <figure class="avatar avatar-sm">
-
+                                        <img src="assets\assets\media\image\user\man_avatar2.jpg" alt="">
                                     </figure>
                                     <span class="ml-2 d-sm-inline d-none"><?= $store->store_fullname ?></span>
                                 </a>

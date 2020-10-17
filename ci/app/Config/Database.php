@@ -51,28 +51,6 @@ class Database extends \CodeIgniter\Database\Config
 		'port'     => 3306,
 	];
 
-	public $development = [
-		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => 'root',
-		'password' => 'root',
-		'database' => 'catalogue',
-		'DBDriver' => 'MySQLi',
-		'DBPrefix' => '',
-		'pConnect' => false,
-		'DBDebug'  => (ENVIRONMENT !== 'production'),
-		'cacheOn'  => false,
-		'cacheDir' => '',
-		'charset'  => 'utf8',
-		'DBCollat' => 'utf8_general_ci',
-		'swapPre'  => '',
-		'encrypt'  => false,
-		'compress' => false,
-		'strictOn' => false,
-		'failover' => [],
-		'port'     => 3306,
-	];
-
 	public $production = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
@@ -129,7 +107,7 @@ class Database extends \CodeIgniter\Database\Config
 	{
 		parent::__construct();
 		
-		$this->defaultGroup = ENVIRONMENT;
+		// $this->defaultGroup = ENVIRONMENT;
 
 
 		// Ensure that we always set the database group to 'tests' if
