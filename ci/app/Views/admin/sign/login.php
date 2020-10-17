@@ -12,7 +12,7 @@
     <!-- form -->
     <form method="POST" action="postlogin">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email" name="email" required autofocus>
+            <input type="login" class="form-control" placeholder="Email" name="email" required autofocus>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="pass" required>

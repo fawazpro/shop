@@ -65,7 +65,7 @@
                         <div class="form-group row">
                             <label for="Username" class="col-sm-1-12 col-form-label">Username:</label>
                             <div class="col-sm-1-12 col-8">
-                                <input type="text" class="form-control" name="username" id="username" value="<?= $user['email'] ?>">
+                                <input type="email" class="form-control" name="email" id="username" value="<?= $user['email'] ?>">
                             </div>
                         </div>
                         <div class="form-group row">
